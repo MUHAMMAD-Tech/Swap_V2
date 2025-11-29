@@ -93,16 +93,3 @@
 }
 
 
-@media (max-width: 768px) {
-  .chain-dropdown {
-    position: fixed; /* ✅ Mobile: fixed */
-    top: auto;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90vw;
-    max-width: 300px;
-    max-height: 60vh;
-    z-index: 9999;
-  }
-}
