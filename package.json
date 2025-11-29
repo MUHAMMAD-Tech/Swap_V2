@@ -1,0 +1,44 @@
+{
+  "name": "lethex",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "vite",
+    "dev:backend": "cd server && npm run dev",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@jup-ag/api": "^6.0.45",
+    "@reown/appkit": "1.8.12",
+    "@reown/appkit-adapter-solana": "1.8.12",
+    "@reown/appkit-adapter-wagmi": "1.8.12",
+    "@solana/web3.js": "^1.98.4",
+    "@tanstack/react-query": "^5.56.2",
+    "@uniswap/sdk": "^3.0.3",
+    "@uniswap/v3-periphery": "^1.4.4",
+    "@uniswap/v3-sdk": "^3.26.0",
+    "axios": "^1.13.1",
+    "concurrently": "^9.2.1",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "viem": "^2.31.3",
+    "wagmi": "^2.12.14"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.1",
+    "eslint": "^9.9.0",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.9",
+    "globals": "^15.9.0",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^8.0.1",
+    "vite": "^6.2.0"
+  }
+}

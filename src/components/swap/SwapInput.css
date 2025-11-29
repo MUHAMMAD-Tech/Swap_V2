@@ -1,0 +1,104 @@
+.swap-input {
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  transition: all 0.2s;
+}
+
+.swap-input:focus-within {
+  border-color: rgba(99, 102, 241, 0.5);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.swap-input.readonly {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.swap-input-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.swap-input-label {
+  font-size: 13px;
+  color: #71717a;
+}
+
+.swap-input-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.swap-amount-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  font-weight: 500;
+  color: white;
+  outline: none;
+  min-width: 0;
+}
+
+.swap-amount-input::placeholder {
+  color: #3f3f46;
+}
+
+.swap-amount-input:read-only {
+  color: #a1a1aa;
+}
+
+.swap-input-loading {
+  flex: 1;
+  height: 34px;
+  display: flex;
+  align-items: center;
+}
+
+.loading-pulse {
+  width: 120px;
+  height: 28px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  background-size: 200% 100%;
+  border-radius: 8px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { background-position: 200% 0; }
+  50% { background-position: 0 0; }
+}
+
+.token-select-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.token-select-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.token-select-logo {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
