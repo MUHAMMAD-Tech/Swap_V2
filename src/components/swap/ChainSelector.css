@@ -1,5 +1,6 @@
 .chain-selector {
   position: relative;
+  overflow: visible;
 }
 
 .chain-selector-trigger {
