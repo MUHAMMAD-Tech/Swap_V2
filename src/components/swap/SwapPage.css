@@ -106,6 +106,9 @@
 
 .chain-selector-row {
   margin-bottom: 16px;
+  overflow: visible;
+  position: relative;
+  z-index: 100;
 }
 
 .swap-inputs {
