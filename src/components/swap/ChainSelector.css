@@ -47,9 +47,12 @@
   background: #1a1b23;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  overflow: hidden;
-  z-index: 999;
+  overflow: visible; /* ✅ O'ZGARTIRILDI */
+  z-index: 1000; /* ✅ Z-index oshirildi */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  min-height: 200px; /* ✅ Minimal balandlik */
+  max-height: 400px; /* ✅ Maksimal balandlik */
+  overflow-y: auto; /* ✅ Scroll qo'shildi */
 }
 
 .chain-option {
