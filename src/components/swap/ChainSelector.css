@@ -39,15 +39,11 @@
 }
 
 .chain-dropdown {
-  position: fixed;
-  z-index: 10000;
-  top: calc(100% + 8px);
-  left: 0;
-  right: 0;
+  /* position JS orqali beriladi (fixed) */
+  z-index: 100000;
   background: #1a1b23;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   max-height: 300px;
   overflow-y: auto;
