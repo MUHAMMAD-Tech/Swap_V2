@@ -39,8 +39,8 @@
 }
 
 .chain-dropdown {
-  position: absolute;
-  z-index: 9999;
+  position: fixed;
+  z-index: 10000;
   top: calc(100% + 8px);
   left: 0;
   right: 0;
