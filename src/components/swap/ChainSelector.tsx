@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ChainConfig } from '../../types';
 import { useChains, useSwapState, useSwapActions } from '../../hooks/useStore';
 import './ChainSelector.css';
@@ -8,6 +8,41 @@ export function ChainSelector() {
   const chains = useChains();
   const state = useSwapState();
   const { setSelectedChain } = useSwapActions();
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
+
+  // Close on Escape key
+  useEffect(() => {
+    function handleEscape(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscape);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [isOpen]);
 
   const handleSelect = (chain: ChainConfig) => {
     setSelectedChain(chain);
@@ -15,10 +50,11 @@ export function ChainSelector() {
   };
 
   return (
-    <div className="chain-selector">
+    <div className="chain-selector" ref={dropdownRef}>
       <button 
         className="chain-selector-trigger"
         onClick={() => setIsOpen(!isOpen)}
+        type="button"
       >
         {state.selectedChain ? (
           <>
@@ -47,6 +83,7 @@ export function ChainSelector() {
               key={chain.id}
               className={`chain-option ${state.selectedChain?.id === chain.id ? 'selected' : ''}`}
               onClick={() => handleSelect(chain)}
+              type="button"
             >
               <img 
                 src={chain.logoUrl} 
