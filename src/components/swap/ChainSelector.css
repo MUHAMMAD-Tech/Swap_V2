@@ -39,8 +39,8 @@
 }
 
 .chain-dropdown {
-  position:fixed;
-  z-index:9999;
+  position: absolute;
+  z-index: 9999;
   top: calc(100% + 8px);
   left: 0;
   right: 0;
@@ -49,6 +49,8 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 .chain-option {
