@@ -1,6 +1,6 @@
 import { ChainConfig, TokenInfo, QuoteResponse, SwapRecord, FeeCalculation } from '../types';
 
-const API_BASE = '/api';
+const API_BASE = import.meta.env.VITE_API_URL || '/api';
 
 interface ApiResponse<T> {
   success: boolean;
