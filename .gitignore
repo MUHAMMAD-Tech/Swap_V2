@@ -7,3 +7,4 @@ npm-debug.log*
 yarn-debug.log*
 pnpm-debug.log*
 .local/
+package-lock.json
